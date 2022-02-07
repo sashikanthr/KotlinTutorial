@@ -22,6 +22,7 @@ object ObjectEntityFactory {
             EASY -> type.getFormattedName()
             MEDIUM -> type.getFormattedName()
             HARD -> type.getFormattedName()
+            HELP -> type.getFormattedName()
         }
         return EntityClass(id,name)
     }
