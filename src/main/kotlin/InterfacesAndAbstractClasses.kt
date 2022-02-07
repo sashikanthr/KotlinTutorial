@@ -31,7 +31,8 @@ interface PersonInfoProviderWithPropertiesAndMethods {
     }
 }
 
-class BasicInfoProvider2: PersonInfoProviderWithPropertiesAndMethods {
+
+ class BasicInfoProvider2: PersonInfoProviderWithPropertiesAndMethods {
     override val providerInfo: String
         get() = "Initialized by the implementing class" // Notice the get implementation here and in Classes.kt for get()
 }
@@ -41,7 +42,12 @@ interface SessionInfoProvider {
     val sessionInfo: String
 }
 
-class PersonInfoProviderImplementingMultipleInterfaces : SessionInfoProvider, PersonInfoProvider {
+//The open keyword is used for opening the class for inheritance.
+open class PersonInfoProviderImplementingMultipleInterfaces : SessionInfoProvider, PersonInfoProvider {
+
+    //To override a property we need to modify a member using open command
+    protected open var session = "PersonInfoProviderImplementingMultipleInterfaces Session"
+
     override fun printInfo(person: Person) {
         println("Inside PersonInfoProviderImplementingMultipleInterfaces")
     }
